@@ -1,0 +1,24 @@
+{
+	"name": "GFG Forcer",
+	"version": "1.0.0",
+	"description": "An extension which forces you to solve daily GeeksforGeeks problems. Say no to procrastination.",
+	"manifest_version": 3,
+	"action": {
+		"default_icon": "images/icon.png",
+		"default_popup": "popup.html"
+	},
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["content.js"],
+			"run_at": "document_start",
+			"world": "MAIN"
+		}
+	],
+	"permissions": ["tabs", "storage", "activeTab"],
+	"host_permissions": ["https://*/", "<all_urls>"],
+	"background": {
+		"service_worker": "background.js",
+		"type": "module"
+	}
+}
