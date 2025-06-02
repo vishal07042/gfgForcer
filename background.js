@@ -60,7 +60,12 @@ function redirectToGFG() {
 		const currentTab = tabs[0];
 		try {
 			const url = new URL(currentTab.url);
-			if (url.hostname.includes("geeksforgeeks.org")) {
+			if (url.hostname.includes("geeksforgeeks.org") ||
+				url.hostname.includes("leetcode.com") ||
+				url.hostname.includes("accounts.google.com") ||
+				url.hostname.includes("extensions") ||
+				url.hostname.includes("github.com") ||
+				url.hostname.includes("drive.google.com")) {
 				// Already on GFG, do not redirect
 				return;
 			}
